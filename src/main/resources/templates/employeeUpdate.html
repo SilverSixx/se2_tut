@@ -7,9 +7,9 @@
   <title>Edit Employee</title>
 </head>
 <body>
-<div>
+<div layout:fragment="content">
   <h2>UPDATE EMPLOYEE</h2>
-  <form th:object="${employee}" method="post" th:action="'/api/employee/' + ${employee.getId()}">
+  <form th:object="${employee}" method="post" th:action="'/api/employee/update/' + ${employee.getId()}">
     <input type="hidden" th:field="${employee.id}">
     <div class="control-group">
       <label>Employee name:</label>
