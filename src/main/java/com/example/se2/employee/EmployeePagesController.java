@@ -1,6 +1,7 @@
 package com.example.se2.employee;
 
-import com.example.se2.employee.entities.Employee;
+import com.example.se2.company.Company;
+import com.example.se2.company.CompanyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,6 +16,8 @@ import java.util.List;
 public class EmployeePagesController {
     @Autowired
     private EmployeeService employeeService;
+    @Autowired
+    private CompanyService companyService;
 
     @GetMapping()
     public String findAll(Model model) {
@@ -31,7 +34,9 @@ public class EmployeePagesController {
     @GetMapping("/add")
     public String create(Model model) {
         Employee employee = new Employee();
+        List<Company> companies = companyService.findAll();
         model.addAttribute("employee", employee);
+        model.addAttribute("companies", companies);
         return "employeeAdd";
     }
     @GetMapping("/update/{id}")

@@ -27,7 +27,7 @@
         <a th:href="'/'+ ${employee.getId()}" th:text="${employee.getName()}"/>
       </td>
       <td>
-        <img th:src="${employee.image}" width="100" height="100"/>
+        <img th:src="${employee.getImage()}" width="100" height="100"/>
       </td>
       <td><a th:href="'/update/' + ${employee.getId()}">UPDATE</a></td>
       <td><a th:href="'/delete/' + ${employee.getId()}">DELETE</a></td>

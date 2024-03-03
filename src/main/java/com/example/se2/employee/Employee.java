@@ -1,9 +1,7 @@
-package com.example.se2.employee.entities;
+package com.example.se2.employee;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.example.se2.company.Company;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.*;
@@ -28,7 +26,8 @@ public class Employee {
   private String image;
 
   private String address;
-
+  @ManyToOne
+  private Company company;
   public Long getId() {
     return id;
   }
@@ -67,5 +66,13 @@ public class Employee {
 
   public void setAddress(String address) {
     this.address = address;
+  }
+
+  public Company getCompany() {
+    return company;
+  }
+
+  public void setCompany(Company company) {
+    this.company = company;
   }
 }

@@ -1,7 +1,5 @@
 package com.example.se2.employee;
 
-import com.example.se2.employee.entities.Employee;
-import com.example.se2.employee.repositories.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
