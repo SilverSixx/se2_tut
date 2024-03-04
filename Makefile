@@ -11,4 +11,4 @@ createDb:
 dropDb:
 	docker exec -it mysql8 mysql -uroot -p2311 -e "DROP DATABASE IF EXISTS se2;"
 
-.PHONY: init_sql createdb dropdb mysql_cli stop_sql drop_sql
+.PHONY: initSql createDb dropDb mysqlCli stopSql dropSql

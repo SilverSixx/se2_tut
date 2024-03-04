@@ -29,8 +29,9 @@
         <p class="form-group">
             <label>Company</label>
             <select type="text" th:field="*{company}">
-                <option th:each="company : ${companies}" th:value="${company.id}" th:text="${company.name}"/>
+                <option th:each="company : ${companies}" th:value="${company.getId()}" th:text="${company.getName()}"/>
             </select>
+        </p>
         <p>
             <button type="submit">ADD</button>
         </p>

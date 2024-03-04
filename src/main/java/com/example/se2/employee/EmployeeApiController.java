@@ -19,7 +19,7 @@ public class EmployeeApiController {
     return "redirect:/" + employee.getId();
   }
 
-  @PostMapping("/update/{id}")
+  @PostMapping("/update")
   public String update(@Valid Employee employee, BindingResult res) {
     if(res.hasErrors()){
       return "employeeUpdate";

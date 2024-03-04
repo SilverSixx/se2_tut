@@ -24,7 +24,7 @@ public class CompanyPagesController {
     }
 
     @GetMapping("/{id}")
-    public String findOne(@PathVariable(value = "id") Long id, Model model) {
+    public String findOne(@PathVariable("id") Long id, Model model) {
         Company company = companyService.findOne(id);
         List<Employee> employees = company.getEmployees();
         model.addAttribute("company", company);
@@ -40,7 +40,7 @@ public class CompanyPagesController {
     }
 
     @GetMapping("/update/{id}")
-    public String update(@PathVariable("id") Long id, Model model) {
+    public String update(@PathVariable(value = "id") Long id, Model model) {
         Company company = companyService.findOne(id);
         model.addAttribute("company", company);
         return "companyUpdate";

@@ -42,7 +42,9 @@ public class EmployeePagesController {
     @GetMapping("/update/{id}")
     public String update(@PathVariable("id") Long id, Model model) {
         Employee employee = employeeService.findOne(id).get();
+        List<Company> companies = companyService.findAll();
         model.addAttribute("employee", employee);
+        model.addAttribute("companies", companies);
         return "employeeUpdate";
     }
     @GetMapping("/delete/{id}")
